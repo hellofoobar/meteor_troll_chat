@@ -1,0 +1,42 @@
+<template name="chats">
+
+    <style type="text/css">
+        .container {
+            margin-top: 4em;
+        }
+    </style>
+
+    {{> nav}}
+
+    <div class="container">
+        <center>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Message</th> <th>Sender</th> <th>Time</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {{#each messages}}
+                        <tr><td >{{content}}</td> <td>{{sender}} </td> <td>{{time}}</td></tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </center>
+
+        <form id="new_message">
+        <div class="box-footer">
+            <div class="input-group">
+                <input type="text" name="message" placeholder="Type Message ..." class="form-control" id="message">
+                <span class="input-group-btn">
+                        <button type="submit" class="btn btn-danger btn-flat" id="send">Send</button>
+                    </span>
+            </div>
+        </div><!-- /.box-footer-->
+        </form>
+    </div>
+
+</template>

@@ -1,0 +1,58 @@
+<template name="nav">
+    <style>
+        .active{
+            color: white !important;
+        }
+        .navbar-fixed-top ul li{
+            display:inline-block;
+            color:#808080 !important;
+        }
+    </style>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="/chats" ><span class="glyphicon glyphicon-home"></span></a>
+
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-center">
+
+                    <li style=""><a href="">Active Users ({{active_users}})</a></li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href=""><span class="glyphicon glyphicon-user" data-toggle="modal" data-target="#myModal">{{username}}</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">My Profile</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Username: {{username}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" id="logout">Log Out</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</template>
